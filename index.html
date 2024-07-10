@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="list.js"></script>
+		<script src="index.js"></script>
+		<link rel="stylesheet" href="index.css" />
+		<title>火弦月MC档案</title>
+	</head>
+	<body>
+		<div id="container">
+			<div id="title">
+				<h1 id="title-1">火 弦 月 M C 档 案</h1>
+				<h4 id="title-2">
+					本档案仓库非火弦月本人管理, 如有缺失错误, 请按加入
+					<a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5vQGDPQkXZuWkwfyfEsNIWcrIJfAg4OQ&authKey=NxrqIwvtsrDn%2BEw6WTaWx9%2FgV4%2ByyU0B83sHdAZ864L8I3KeLKeedWpJX1svpdBW&noverify=0&group_code=957971371"  title="群号: 957971371">
+						火弦月粉丝群3
+					</a>联系我们
+				</h4>
+			</div>
+			<div id="index">
+				<div id="index-in">
+					搜索方式
+				</div>
+				<div id="t-0" class="t-def" onclick="indexList(0);timeLoad();">
+					按时间
+				</div>
+				<div id="t-1" class="t-def" onclick="indexList(1);typeLoad();">
+					按类型
+				</div>
+			</div>
+			<div id="table">
+				<div id="th">
+					<div id="th-td-0">发布时间</div>
+					<div id="th-td-1">类型</div>
+					<div id="th-td-2">机器名称</div>
+					<div id="th-td-3">视频链接</div>
+					<div id="th-td-4">下载</div>
+				</div>
+			</div>
+		</div>
+		
+		<a href="" id="downloader" download></a>
+		<script>
+			indexList(0);
+			timeLoad();
+		</script>
+	</body>
+</html>

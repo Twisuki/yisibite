@@ -1,0 +1,161 @@
+html {
+	min-height: 100%;
+}
+body {
+	min-height: 100%;
+	background-image: linear-gradient(to top left, rgb(29, 21, 44), rgb(21, 21, 44), rgb(29, 21, 44));
+}
+#container{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+}
+#title{
+	width: 1000px;
+	height: 200px;
+	background-color: #d4d4d820;
+	margin-top: 30px;
+}
+#title-1{
+	width: 1000px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 50px;
+	color: #c039de;
+	margin-top: 75px;
+	float: left;
+}
+#title-2{
+	width: 1000px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 25px;
+	color: #3e7e7a;
+	margin-top: -25px;
+	float: left;
+}
+#title-2 a:link, #title-2 a:visited{
+	color: #00699d;
+	text-decoration: none;
+}
+#index{
+	width: 1000px;
+	height: 50px;
+	background-color: #d4d4d820;
+	margin-top: 30px;
+}
+#index-in{
+	width: 150px;
+	height: 50px;
+	margin-left: 250px;
+	text-align: center;
+	line-height: 50px;
+	font-size: 30px;
+	color: #eeeeee;
+	float: left;
+}
+.t-def{
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 25px;
+	font-size: 17px;
+	float: left;
+	color: #eeeeee;
+	background-color: #216ed1;
+	border: #216ed1 2px solid;
+}
+.t-def:hover{
+	color: #216ed1;
+	background-color: #d4d4d8;
+	border: #216ed1 2px solid;
+}
+.t-aft{
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: 25px;
+	font-size: 17px;
+	float: left;
+	color: #eeeeee;
+	background-color: #124078;
+	border: #124078 2px solid;
+}
+
+#table{
+	width: 1000px;
+	background-color: #d4d4d8;
+	margin-top: 30px;
+}
+#th, .tr{
+	width: 1000px;
+	height: 25px;
+}
+#th div{
+	text-decoration: none;
+}
+.td-0, .td-1, .td-2, .td-3, .td-4, #th-td-0, #th-td-1, #th-td-2, #th-td-3, #th-td-4{
+	height: 30px;
+	color: #eeeeee;
+	text-align: center;
+	line-height: 30px;
+	font-size: 20px;
+	float: left;
+}
+/* 发布时间 类型 机器名称 视频链接 下载 */
+/* 1000{150 150 300 300 100 } */
+.td-0, #th-td-0{
+	width: 150px;
+	background-color: #00aaff;
+}
+.td-1, #th-td-1{
+	width: 150px;
+	background-color: #0070a8;
+}
+.td-2, #th-td-2{
+	width: 300px;
+	background-color: #00aaff;
+}
+.td-3, #th-td-3{
+	width: 300px;
+	background-color: #0070a8;
+	text-decoration: #00ffff underline;
+}
+.td-4, #th-td-4{
+	width: 100px;
+	background-color: #00aaff;
+}
+.btn-def{
+	width: 80px;
+	height: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #006090;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: center;
+}
+.btn-def:hover{
+	background-color: #eeeeee;
+	color: #006090;
+}
+.btn-aft{
+	width: 80px;
+	height: 25px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #4cba1c;
+	font-size: 18px;
+	line-height: 25px;
+	text-align: center;
+}
+.btn-aft:hover{
+	background-color: #eeeeee;
+	color: #4cba1c;
+}
