@@ -63,5 +63,145 @@ window.list = [
 		"date": "2024-02-02",
 		"type": "3-way",
 		"extension": "zip"
+	},
+	{
+		"name": "无安全连杆版无沟世吞",
+		"bv": "BV11h4y1t7Mh",
+		"date": "2023-05-20",
+		"type": "eater",
+		"extension": "zip"
+	},
+	{
+		"name": "9宽下降沟世界吞噬者",
+		"bv": "BV1s64y1L7YZ",
+		"date": "2023-12-01",
+		"type": "eater",
+		"extension": "zip"
+	},
+	{
+		"name": "无沟世吞V2",
+		"bv": "BV1rP4y1r75J",
+		"date": "2023-01-21",
+		"type": "eater",
+		"extension": "zip"
+	},
+	{
+		"name": "无沟世吞V3",
+		"bv": "BV1za4y1P7cw",
+		"date": "2023-04-22",
+		"type": "eater",
+		"extension": "zip"
+	},
+	{
+		"name": "14高无沟地吞",
+		"bv": "BV1wy4y197gs",
+		"date": "2023-02-03",
+		"type": "eater",
+		"extension": "zip"
+	},
+	{
+		"name": "16高无沟地吞",
+		"bv": "BV1XW4y137fh",
+		"date": "2023-01-14",
+		"type": "eater",
+		"extension": "zip"
+	},
+	{
+		"name": "无侧沟（防爆沟）世吞",
+		"bv": "BV18m4y1E7P7",
+		"date": "2023-07-12",
+		"type": "eater",
+		"extension": "zip"
+	},
+	{
+		"name": "10高地吞",
+		"bv": "BV1Cu41197MA",
+		"date": "2022-02-11",
+		"type": "eater",
+		"extension": "zip"
+	},
+	{
+		"name": "13高低卡顿地吞",
+		"bv": "BV1Nr4y1o7kv",
+		"date": "2023-08-19",
+		"type": "eater",
+		"extension": "zip"
+	},
+	{
+		"name": "主世界全自动3宽挖沟机",
+		"bv": "BV1jW4y1w7jy",
+		"date": "2024-01-19",
+		"type": "gap",
+		"extension": "zip"
+	},
+	{
+		"name": "地狱全自动3宽挖沟机",
+		"bv": "BV1564y1W7yS",
+		"date": "2023-12-22",
+		"type": "gap",
+		"extension": "zip"
+	},
+	{
+		"name": "无预留密集TNT推土机",
+		"bv": "BV1mG411L7Fm",
+		"date": "2022-10-28",
+		"type": "others",
+		"extension": "zip"
+	},
+	{
+		"name": "2gt铺活塞机",
+		"bv": "BV1HL4y1z744",
+		"date": "2021-10-01",
+		"type": "block",
+		"extension": "zip"
+	},
+	{
+		"name": "4gt铺天花板机",
+		"bv": "BV12V4y1h7XR",
+		"date": "2023-06-30",
+		"type": "block",
+		"extension": "zip"
+	},
+	{
+		"name": "5倍速铺沙机",
+		"bv": "BV17S4y1u7Vx",
+		"date": "2022-03-18",
+		"type": "block",
+		"extension": "zip"
+	},
+	{
+		"name": "4倍速铺铁砧机",
+		"bv": "BV1534y1t7XE",
+		"date": "2022-03-18",
+		"type": "block",
+		"extension": "zip"
+	},
+	{
+		"name": "7x2单发盾构",
+		"bv": "BV18S4y127XZ",
+		"date": "2022-04-09",
+		"type": "tunnel",
+		"extension": "zip"
+	},
+	{
+		"name": "5x3单发盾构",
+		"bv": "BV1bL411f7J9",
+		"date": "2023-04-14",
+		"type": "tunnel",
+		"extension": "zip"
+	},
+	{
+		"name": "5x3 二、三连发盾构机",
+		"bv": "BV1NT411V7Vx",
+		"date": "2022-06-24",
+		"type": "tunnel",
+		"extension": "zip"
+	},
+	{
+		"name": "12倍速排水机",
+		"bv": "BV1db4y1K7BB",
+		"date": "2023-12-08",
+		"type": "water",
+		"extension": "zip"
 	}
 ];
