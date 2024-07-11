@@ -159,3 +159,15 @@ body {
 	background-color: #eeeeee;
 	color: #4cba1c;
 }
+
+#bottom{
+	width: 1000px;
+	height: 100px;
+	margin-top: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #00000000;
+}
+#bottom a:link, #bottom a:visited{
+	color: #00000000;
+}
