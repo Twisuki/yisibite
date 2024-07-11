@@ -2,6 +2,7 @@ var typeList = [...list];
 var timeList = [...list];
 var videoCount = [];
 
+
 for (let i in list) {
 	videoCount[i] = false;
 }
@@ -32,33 +33,15 @@ function typeSort(type) {
 	// type: "3-way", "eater", "gap", "block", "tunnel", "water", "quarry", "bedrock", "others"
 	// type:   三向    吞噬者   挖沟机  铺方块机   盾构机     排水机    采矿机     基岩机     其他
 	switch (type) {
-		case "3-way":
-			return 0;
-			break;
-		case "eater":
-			return 1;
-			break;
-		case "gap":
-			return 2;
-			break;
-		case "block":
-			return 3;
-			break;
-		case "tunnel":
-			return 4;
-			break;
-		case "water":
-			return 5;
-			break;
-		case "quarry":
-			return 6;
-			break;
-		case "bedrock":
-			return 7;
-			break;
-		case "others":
-			return 8;
-			break;
+		case "3-way":return 0;
+		case "eater":return 1;
+		case "gap":return 2;
+		case "block":return 3;
+		case "tunnel":return 4;
+		case "water":return 5;
+		case "quarry":return 6;
+		case "bedrock":return 7;
+		case "others":return 8;
 	}
 }
 
@@ -91,7 +74,7 @@ function timeLoad() {
 		const rowHTML = `
 			<div class='tr'>
 				<div class='td-0'>${timeList[i].date}</div>
-				<div class='td-1'>${timeList[i].type}</div>
+				<div class='td-1'>${getType(timeList[i].type)}</div>
 				<div class='td-2'>${timeList[i].name}</div>
 				<div class='td-3' onclick='bilibili("${timeList[i].bv}", 0)'>${timeList[i].bv}</div>
 				<div class='td-4'>
@@ -119,7 +102,7 @@ function typeLoad() {
 			const rowHTML = `
 				<div class='tr'>
 					<div class='td-0'>${typeList[i].date}</div>
-					<div class='td-1'>${typeList[i].type}</div>
+					<div class='td-1'>${getType(typeList[i].type)}</div>
 					<div class='td-2'>${typeList[i].name}</div>
 					<div class='td-3' onclick='bilibili("${typeList[i].bv}", 1)'>${typeList[i].bv}</div>
 					<div class='td-4'>
@@ -129,6 +112,20 @@ function typeLoad() {
 			`;
 			document.getElementById("table").innerHTML += rowHTML;
 		}
+}
+
+function getType(givenType){
+	switch (givenType) {
+		case "3-way":return "三向轰炸机";
+		case "eater":return "世吞/地吞";
+		case "gap":return "挖沟机";
+		case "block":return "铺方块机";
+		case "tunnel":return "盾构机";
+		case "water":return "排水机";
+		case "quarry":return "采矿机";
+		case "bedrock":return "基岩机";
+		case "others":return "其他";
+	}
 }
 
 function bilibili(givenBv, type) {
