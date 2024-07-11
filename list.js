@@ -76,14 +76,14 @@ window.list = [
 		"bv": "BV1s64y1L7YZ",
 		"date": "2023-12-01",
 		"type": "eater",
-		"extension": "zip"
+		"extension": "txt"
 	},
 	{
 		"name": "无沟世吞V2",
 		"bv": "BV1rP4y1r75J",
 		"date": "2023-01-21",
 		"type": "eater",
-		"extension": "zip"
+		"extension": "txt"
 	},
 	{
 		"name": "无沟世吞V3",
@@ -97,21 +97,21 @@ window.list = [
 		"bv": "BV1wy4y197gs",
 		"date": "2023-02-03",
 		"type": "eater",
-		"extension": "zip"
+		"extension": "txt"
 	},
 	{
 		"name": "16高无沟地吞",
 		"bv": "BV1XW4y137fh",
 		"date": "2023-01-14",
 		"type": "eater",
-		"extension": "zip"
+		"extension": "txt"
 	},
 	{
 		"name": "无侧沟（防爆沟）世吞",
 		"bv": "BV18m4y1E7P7",
 		"date": "2023-07-12",
 		"type": "eater",
-		"extension": "zip"
+		"extension": "txt"
 	},
 	{
 		"name": "10高地吞",
@@ -139,7 +139,7 @@ window.list = [
 		"bv": "BV1564y1W7yS",
 		"date": "2023-12-22",
 		"type": "gap",
-		"extension": "zip"
+		"extension": "txt"
 	},
 	{
 		"name": "无预留密集TNT推土机",
