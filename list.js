@@ -203,5 +203,75 @@ window.list = [
 		"date": "2023-12-08",
 		"type": "water",
 		"extension": "zip"
+	},
+	{
+		"name": "垂直复制采矿机",
+		"bv":"BV1fh4y197n1",
+		"date": "2023-06-10",
+		"type": "quarry",
+		"extension": "zip"
+	},
+	{
+		"name": "主世界超快采矿机",
+		"bv": "BV1Mi4y1i7y5",
+		"date": "2024-01-12",
+		"type": "quarry",
+		"extension": "txt"
+	},
+	{
+		"name": "超快末地石采矿机",
+		"bv": "BV1qQ4y1L7vv",
+		"date": "2024-01-05",
+		"type": "quarry",
+		"extension": "zip"
+	},
+	{
+		"name": "地狱采矿机（破基岩版）",
+		"bv": "BV11x42117Uq",
+		"date": "2024-03-01",
+		"type": "quarry",
+		"extension": "txt"
+	},
+	{
+		"name": "地狱采矿机",
+		"bv": "BV1Sr421H7yg",
+		"date": "2024-03-15",
+		"type": "quarry",
+		"extension": "txt"
+	},
+	{
+		"name": "三向破基岩V4",
+		"bv": "BV18q4y1B781",
+		"date": "2021-12-17",
+		"type": "bedrock",
+		"extension": "zip"
+	},
+	{
+		"name": "三向破基岩V1",
+		"bv": "BV1gP4y1Y7hR",
+		"date": "2021-09-10",
+		"type": "bedrock",
+		"extension": "zip"
+	},
+	{
+		"name": "三向破基岩V2",
+		"bv": "BV1wb4y117sn",
+		"date": "2021-09-24",
+		"type": "bedrock",
+		"extension": "zip"
+	},
+	{
+		"name": "三向破基岩V3",
+		"bv": "BV1844y1x7Ai",
+		"date": "2021-10-15",
+		"type": "bedrock",
+		"extension": "zip"
+	},
+	{
+		"name": "掏空末地5件套",
+		"bv": "BV1tK4y1G7mh",
+		"date": "2021-05-21",
+		"type": "others",
+		"extension": "zip"
 	}
 ];
