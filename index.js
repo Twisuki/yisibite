@@ -1,38 +1,85 @@
-var typeList = [...list];
-var timeList = [...list];
+var list = [];
+var timeList = [];
+var typeList = [];
 var videoCount = [];
+var onDisplay;
 
-
-for (let i in list) {
-	videoCount[i] = false;
+loadListByFetch();
+function loadListByFetch() {
+	fetch("https://raw.githubusercontent.com/Scrohild/yisibite/main/index.json")
+		.then(response => response.json())
+		.then(data => {
+			list = data.list;
+			console.log("使用Fetch加载");
+			setList();
+			initVideoCount();
+			setIndexByTime();
+		})
+		.catch(error => {
+			window.alert("网络异常, 尝试使用js加载");
+			loadListByJs();
+			console.error("Fetch错误", error);
+		});
 }
-for (let i = 1; i < timeList.length; i++) {
-	for (let j = 0; j < i; j++) {
-		let j1 = parseInt(timeList[i].date.replace(/[^0-9]/g, ""), 10);
-		let j2 = parseInt(timeList[j].date.replace(/[^0-9]/g, ""), 10);
-		if (j1 > j2) {
-			let temp = timeList[i];
-			timeList[i] = timeList[j];
-			timeList[j] = temp;
+function loadListByJs() {
+	var script = document.createElement("script");
+	script.src = "data.js";
+	script.onload = function() {
+		if(typeof jsData !== "undefined") {
+			console.log("使用js加载");
+			list = jsData;
+			setList();
+			initVideoCount();
+			setIndexByTime();
+		} else {
+			window.alert("js出现错误, 请翻看黄历并改日再来");
+			console.error("js错误", error);
 		}
 	}
-}
-for (let i = 1; i < typeList.length; i++) {
-	for (let j = 0; j < i; j++) {
-		let j1 = parseInt(typeSort(typeList[i].type));
-		let j2 = parseInt(typeSort(typeList[j].type));
-		if (j1 < j2) {
-			let temp = typeList[i];
-			typeList[i] = typeList[j];
-			typeList[j] = temp;
-		}
-	}
+	document.body.appendChild(script);
 }
 
-function typeSort(type) {
-	// type: "3-way", "eater", "gap", "block", "tunnel", "water", "quarry", "bedrock", "others"
-	// type:   三向    吞噬者   挖沟机  铺方块机   盾构机     排水机    采矿机     基岩机     其他
-	switch (type) {
+function setList() {
+	for (let i in list) {
+		list[i].index = i;
+	}
+	console.log(list);
+	timeList = [...list];
+	typeList = [...list];
+	
+	// 按时间排序
+	for (let i = 0; i < timeList.length - 1; i ++) {
+		for (let j = 0; j < timeList.length - i - 1; j ++) {
+			let a = parseInt(timeList[j].date.replace(/[^0-9]/g, ""), 10);
+			let b = parseInt(timeList[j + 1].date.replace(/[^0-9]/g, ""), 10);
+			
+			if (a < b) {
+				let temp = timeList[j];
+				timeList[j] = timeList[j + 1];
+				timeList[j + 1] = temp;
+			}
+		}
+	}
+	
+	// 按类型排序
+	for (let i = 0; i < typeList.length - 1; i ++) {
+		for (let j = 0; j < typeList.length - i - 1; j ++) {
+			let a = getTypeIndex(typeList[j]);
+			let b = getTypeIndex(typeList[j + 1]);
+			
+			if (a > b) {
+				let temp = typeList[j];
+				typeList[j] = typeList[j + 1];
+				typeList[j + 1] = temp;
+			}
+		}
+	}
+	
+	console.log(timeList);
+	console.log(typeList);
+}
+function getTypeIndex(obj) {
+	switch (obj.type) {
 		case "3-way":return 0;
 		case "eater":return 1;
 		case "gap":return 2;
@@ -45,76 +92,78 @@ function typeSort(type) {
 	}
 }
 
-
-
-
-function indexList(i) {
-	if (i == 0) {
-		document.getElementById("t-0").className = "t-aft";
-		document.getElementById("t-1").className = "t-def";
+function initVideoCount() {
+	if(localStorage.getItem("LSVideoCount") == null) {
+		for (let i in list) {
+			videoCount[i] = false;
+		}
+		localStorage.setItem("LSVideoCount", JSON.stringify(videoCount));
 	} else {
-		document.getElementById("t-1").className = "t-aft";
-		document.getElementById("t-0").className = "t-def";
+		videoCount = JSON.parse(localStorage.getItem("LSVideoCount"));
 	}
 }
 
-function timeLoad() {
-	for (let i in list) {
-		videoCount[i] = false;
-	}
-	
-	document.getElementById("table").innerHTML = "<div id='th'></div>";
-	document.getElementById("th").innerHTML = "<div id='th-td-0'>发布时间</div>" +
-		"<div id='th-td-1'>类型</div>" +
-		"<div id='th-td-2'>机器名称</div>" +
-		"<div id='th-td-3'>视频链接</div>" +
-		"<div id='th-td-4'>下载</div>";
-
+function setIndexByTime() {
+	onDisplay = 0;
+	// 改变颜色
+	document.getElementById("index-0").className = "index-btn-aft";
+	document.getElementById("index-1").className = "index-btn-def";
+	// 生成表格
+	document.getElementById("main-in").innerHTML = "";
 	for (let i in timeList) {
 		const rowHTML = `
-			<div class='tr'>
-				<div class='td-0'>${timeList[i].date}</div>
-				<div class='td-1'>${getType(timeList[i].type)}</div>
-				<div class='td-2'>${timeList[i].name}</div>
-				<div class='td-3' onclick='bilibili("${timeList[i].bv}", 0)'>${timeList[i].bv}</div>
-				<div class='td-4'>
-					<div class='btn btn-def' onclick='download("${timeList[i].bv}")'>下载</div>
-				</div>
+			<div class='main-row'>
+				<div class='main-index'>${i}</div>
+				<div class='main-time'>${timeList[i].date}</div>
+				<div class='main-type'>${getTypeName(timeList[i].type)}</div>
+				<div class='main-name'>${timeList[i].name}</div>
+				<div class='main-bv' onclick='playOnBilibili("${timeList[i].index}")'>视频</div>
+				<div class='main-download' onclick='download("${timeList[i].index}")'>下载</div>
 			</div>
 		`;
-		document.getElementById("table").innerHTML += rowHTML;
-	}
-}
-
-function typeLoad() {
-	for (let i in list) {
-		videoCount[i] = false;
+		const fragment = document.createDocumentFragment();
+		const tempDiv = document.createElement('div');
+		tempDiv.innerHTML = rowHTML;
+		while (tempDiv.firstChild) {
+			fragment.appendChild(tempDiv.firstChild);
+		}
+		
+		document.getElementById("main-in").appendChild(fragment);
 	}
 	
-	document.getElementById("table").innerHTML = "<div id='th'></div>";
-	document.getElementById("th").innerHTML = "<div class='td-0'>发布时间</div>" +
-		"<div class='td-1'>类型</div>" +
-		"<div class='td-2'>机器名称</div>" +
-		"<div class='td-3'>视频链接</div>" +
-		"<div class='td-4'>下载</div>";
-		
-		for (let i in typeList) {
-			const rowHTML = `
-				<div class='tr'>
-					<div class='td-0'>${typeList[i].date}</div>
-					<div class='td-1'>${getType(typeList[i].type)}</div>
-					<div class='td-2'>${typeList[i].name}</div>
-					<div class='td-3' onclick='bilibili("${typeList[i].bv}", 1)'>${typeList[i].bv}</div>
-					<div class='td-4'>
-						<div class='btn btn-def' onclick='download("${typeList[i].bv}")'>下载</div>
-					</div>
-				</div>
-			`;
-			document.getElementById("table").innerHTML += rowHTML;
-		}
+	setDownloadStyle();
 }
-
-function getType(givenType){
+function setIndexByType() {
+	onDisplay = 1;
+	// 改变颜色
+	document.getElementById("index-0").className = "index-btn-def";
+	document.getElementById("index-1").className = "index-btn-aft";
+	// 生成表格
+	document.getElementById("main-in").innerHTML = "";
+	for (let i in typeList) {
+		const rowHTML = `
+			<div class='main-row'>
+				<div class='main-index'>${i}</div>
+				<div class='main-time'>${typeList[i].date}</div>
+				<div class='main-type'>${getTypeName(typeList[i].type)}</div>
+				<div class='main-name'>${typeList[i].name}</div>
+				<div class='main-bv' onclick='playOnBilibili(${typeList[i].index})'>视频</div>
+				<div class='main-download' onclick='download(${typeList[i].index})'>下载</div>
+			</div>
+		`;
+		const fragment = document.createDocumentFragment();
+		const tempDiv = document.createElement('div');
+		tempDiv.innerHTML = rowHTML;
+		while (tempDiv.firstChild) {
+			fragment.appendChild(tempDiv.firstChild);
+		}
+		
+		document.getElementById("main-in").appendChild(fragment);
+	}
+	
+	setDownloadStyle();
+}
+function getTypeName(givenType) {
 	switch (givenType) {
 		case "3-way":return "三向轰炸机";
 		case "eater":return "世吞/地吞";
@@ -128,48 +177,50 @@ function getType(givenType){
 	}
 }
 
-function bilibili(givenBv, type) {
-	if (type == 0) {
+function playOnBilibili(index) {
+	videoCount[index] = true;
+	localStorage.setItem("LSVideoCount", JSON.stringify(videoCount));
+	window.open("https://bilibili.com/video/" + list[index].bv);
+	setDownloadStyle();
+}
+function setDownloadStyle() {
+	if (onDisplay == 0) {
 		for (let i in timeList) {
-			if (timeList[i].bv == givenBv) {
-				document.getElementsByClassName("btn")[i].className = "btn btn-aft";
-				break;
-			}
-		}
-		for (let i in list) {
-			if (list[i].bv == givenBv) {
-				videoCount[i] = true;
-				window.open("https://bilibili.com/video/" + list[i].bv);
-				break;
+			if(videoCount[timeList[i].index]) {
+				document.getElementsByClassName("main-download")[i].className = "main-download main-download-aft";
+				document.getElementsByClassName("main-download")[i].title = "点我下载";
+			} else {
+				document.getElementsByClassName("main-download")[i].className = "main-download main-download-def";
+				document.getElementsByClassName("main-download")[i].title = "下载不可用\n请点击链接为可怜的月月贡献播放量";
 			}
 		}
 	} else {
 		for (let i in typeList) {
-			if (typeList[i].bv == givenBv) {
-				document.getElementsByClassName("btn")[i].className = "btn btn-aft";
-				break;
-			}
-		}
-		for (let i in list) {
-			if (list[i].bv == givenBv) {
-				videoCount[i] = true;
-				window.open("https://bilibili.com/video/" + list[i].bv);
-				break;
+			if(videoCount[typeList[i].index]) {
+				document.getElementsByClassName("main-download")[i].className = "main-download main-download-aft";
+				document.getElementsByClassName("main-download")[i].title = "点我下载";
+			} else {
+				document.getElementsByClassName("main-download")[i].className = "main-download main-download-def";
+				document.getElementsByClassName("main-download")[i].title = "下载不可用\n请点击链接为可怜的月月贡献播放量";
 			}
 		}
 	}
 }
 
-function download(givenBv) {
-	for (let i in list) {
-		if (list[i].bv == givenBv) {
-			if (! videoCount[i]) {
-				window.alert("下载不可用\n请点击链接为可怜的月月贡献播放量");
-			} else {
-				let a = document.getElementById("downloader");
-				a.href = "litematica/" + list[i].bv + "." + list[i].extension;
-				a.click();
-			}
-		}
+function download(index) {
+	if(! videoCount[index]) {
+		window.alert("下载不可用\n请点击链接为可怜的月月贡献播放量");
+	} else {
+		let a = document.getElementById("downloader");
+		a.href = "litematica/" + list[index].bv + "." + list[index].extension;
+		a.click();
 	}
+}
+
+function delLocalStorage() {
+	window.alert("你确定吗?\n此操作会清楚缓存, 且不可逆");
+	window.alert("你确定吗?\n这里会清除你的数据, 你需要重新观看视频才能下载");
+	window.alert("没关系, 咱不给你取消的机会^_^");
+	localStorage.removeItem('LSVideoCount');
+	location.reload();
 }
