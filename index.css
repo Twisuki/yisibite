@@ -1,169 +1,152 @@
-html {
-	min-height: 100%;
+body{
+	background-color: #1d2426;
 }
-body {
-	min-height: 100%;
-	background-image: linear-gradient(to top left, rgb(29, 21, 44), rgb(21, 21, 44), rgb(29, 21, 44));
-}
-#container{
-	width: 1000px;
-	margin-left: auto;
-	margin-right: auto;
-}
+
 #title{
 	width: 1000px;
-	height: 200px;
+	height: 250px;
+	margin-left: auto;
+	margin-right: auto;
 	background-color: #d4d4d820;
-	margin-top: 30px;
+	margin-top: 25px;
 }
 #title-1{
 	width: 1000px;
 	height: 50px;
+	color: #eeeeee;
+	font-size: 50px;
 	text-align: center;
 	line-height: 50px;
-	font-size: 50px;
-	color: #c039de;
+	font-weight: bold;
 	margin-top: 75px;
 	float: left;
 }
 #title-2{
 	width: 1000px;
 	height: 50px;
+	color: #bbbbbb;
 	text-align: center;
 	line-height: 50px;
 	font-size: 25px;
-	color: #3e7e7a;
-	margin-top: -25px;
 	float: left;
 }
-#title-2 a:link, #title-2 a:visited{
-	color: #00699d;
-	text-decoration: none;
+#title-3{
+	width: 1000px;
+	height: 50px;
+	color: #bbbbbb;
+	text-align: center;
+	line-height: 50px;
+	font-size: 25px;
+	float: left;
 }
+#title a:link, #title a:visited{
+	color: #00aaff;
+	text-decoration: underline;
+}
+
 #index{
 	width: 1000px;
 	height: 50px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
 	background-color: #d4d4d820;
-	margin-top: 30px;
 }
 #index-in{
-	width: 150px;
+	width: 200px;
 	height: 50px;
-	margin-left: 250px;
+	color: #eeeeee;
+	margin-left: 200px;
 	text-align: center;
 	line-height: 50px;
-	font-size: 30px;
-	color: #eeeeee;
+	font-size: 25px;
 	float: left;
 }
-.t-def{
+#index-0{
 	width: 150px;
 	height: 30px;
-	line-height: 30px;
-	text-align: center;
 	margin-top: 10px;
-	margin-left: 25px;
-	font-size: 17px;
-	float: left;
-	color: #eeeeee;
-	background-color: #216ed1;
-	border: #216ed1 2px solid;
-}
-.t-def:hover{
-	color: #216ed1;
-	background-color: #d4d4d8;
-	border: #216ed1 2px solid;
-}
-.t-aft{
-	width: 150px;
-	height: 30px;
-	line-height: 30px;
-	text-align: center;
-	margin-top: 10px;
-	margin-left: 25px;
-	font-size: 17px;
-	float: left;
-	color: #eeeeee;
-	background-color: #124078;
-	border: #124078 2px solid;
-}
-
-#table{
-	width: 1000px;
-	background-color: #d4d4d8;
-	margin-top: 30px;
-}
-#th, .tr{
-	width: 1000px;
-	height: 25px;
-}
-#th div{
-	text-decoration: none;
-}
-.td-0, .td-1, .td-2, .td-3, .td-4, #th-td-0, #th-td-1, #th-td-2, #th-td-3, #th-td-4{
-	height: 30px;
-	color: #eeeeee;
 	text-align: center;
 	line-height: 30px;
 	font-size: 20px;
 	float: left;
 }
-/* 发布时间 类型 机器名称 视频链接 下载 */
-/* 1000{150 150 300 300 100 } */
-.td-0, #th-td-0{
+#index-1{
 	width: 150px;
-	background-color: #00aaff;
-}
-.td-1, #th-td-1{
-	width: 150px;
-	background-color: #0070a8;
-}
-.td-2, #th-td-2{
-	width: 300px;
-	background-color: #00aaff;
-}
-.td-3, #th-td-3{
-	width: 300px;
-	background-color: #0070a8;
-	text-decoration: #00ffff underline;
-}
-.td-4, #th-td-4{
-	width: 100px;
-	background-color: #00aaff;
-}
-.btn-def{
-	width: 80px;
-	height: 25px;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: #006090;
-	font-size: 18px;
-	line-height: 25px;
+	height: 30px;
+	margin-top: 10px;
+	margin-left: 50px;
 	text-align: center;
+	line-height: 30px;
+	font-size: 20px;
+	float: left;
 }
-.btn-def:hover{
+.index-btn-def{
+	background-color: #00aaff;
+	color: #eeeeee;
+}
+.index-btn-def:hover{
 	background-color: #eeeeee;
-	color: #006090;
+	color: #00aaff;
 }
-.btn-aft{
-	width: 80px;
-	height: 25px;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: #4cba1c;
-	font-size: 18px;
-	line-height: 25px;
-	text-align: center;
-}
-.btn-aft:hover{
-	background-color: #eeeeee;
-	color: #4cba1c;
+.index-btn-aft{
+	background-color: #005681;
+	color: #eeeeee;
 }
 
+#main{
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	color: #eeeeee;
+	background-color: #d4d4d820;
+	margin-top: 25px;
+}
+#main-head{
+	height: 50px;
+}
+#main-head div{
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	font-size: 25px;
+	float: left;
+}
+#main-index, .main-index{width: 100px;}
+#main-time, .main-time{width: 200px;}
+#main-type, .main-type{width: 200px;}
+#main-name, .main-name{width: 300px;}
+#main-bv, .main-bv{width: 100px;}
+#main-download, .main-download{width: 100px;}
+.main-bv{
+	color: #00aaff;
+	text-decoration: underline;
+}
+.main-download-def{
+	color: #aaaaaa;
+	text-decoration: line-through;
+}
+.main-download-aft{
+	color: #00aaff;
+	text-decoration: underline;
+}
+
+.main-row{
+	height: 30px;
+}
+.main-row div{
+	text-align: center;
+	height: 30px;
+	line-height: 30px;
+	font-size: 15px;
+	float: left;
+}
 #bottom{
 	width: 1000px;
 	height: 100px;
-	margin-top: 50px;
+	margin-top: 25px;
+	margin-left: auto;
+	margin-right: auto;
 	text-align: center;
 	line-height: 50px;
 	color: #00000000;
