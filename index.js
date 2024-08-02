@@ -4,6 +4,29 @@ var typeList = [];
 var videoCount = [];
 var onDisplay;
 
+const litematicaGenerator = [
+	{
+		"id": "yisibite-world-eater",
+		"index": 12
+	},
+	{
+		"id": "yisibite-nether-eater",
+		"index": 14
+	},
+	{
+		"id": "yisibite-once-miner",
+		"index": 26
+	},
+	{
+		"id": "yisibite-3-miner",
+		"index": 27
+	},
+	{
+		"id": "yisibite-quarry-x",
+		"index": 29
+	}
+];
+
 loadListByFetch();
 function loadListByFetch() {
 	fetch("https://raw.githubusercontent.com/Scrohild/yisibite/main/index.json")
@@ -210,11 +233,20 @@ function setDownloadStyle() {
 function download(index) {
 	if(! videoCount[index]) {
 		window.alert("下载不可用\n请点击链接为可怜的月月贡献播放量");
-	} else {
+	} else if(getLitematicaGenerateYes(index)) {
 		let a = document.getElementById("downloader");
 		a.href = "litematica/" + list[index].bv + "." + list[index].extension;
 		a.click();
 	}
+}
+function getLitematicaGenerateYes(index) {
+	for(let i in litematicaGenerator) {
+		if(litematicaGenerator[i].index == index) {
+			window.open("https://www.redenmc.com/mc-services/download/yisibite?m=" + litematicaGenerator[i].id);
+			return false;
+		}
+	}
+	return true;
 }
 
 function delLocalStorage() {
