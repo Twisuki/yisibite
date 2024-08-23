@@ -4,11 +4,12 @@ body{
 
 #title{
 	width: 1000px;
-	height: 250px;
+	height: 300px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #d4d4d820;
 	margin-top: 25px;
+	border-radius: 15px;
 }
 #title-1{
 	width: 1000px;
@@ -51,6 +52,7 @@ body{
 	margin-right: auto;
 	margin-top: 25px;
 	background-color: #d4d4d820;
+	border-radius: 15px;
 }
 #index-in{
 	width: 200px;
@@ -70,6 +72,7 @@ body{
 	line-height: 30px;
 	font-size: 20px;
 	float: left;
+	border-radius: 25px;
 }
 #index-1{
 	width: 150px;
@@ -80,6 +83,8 @@ body{
 	line-height: 30px;
 	font-size: 20px;
 	float: left;
+	border-radius: 25px;
+
 }
 .index-btn-def{
 	background-color: #00aaff;
@@ -90,7 +95,7 @@ body{
 	color: #00aaff;
 }
 .index-btn-aft{
-	background-color: #005681;
+	background-color: #042a3d;
 	color: #eeeeee;
 }
 
@@ -101,6 +106,8 @@ body{
 	color: #eeeeee;
 	background-color: #d4d4d820;
 	margin-top: 25px;
+	border-radius: 15px;
+
 }
 #main-head{
 	height: 50px;

@@ -29,7 +29,7 @@ const litematicaGenerator = [
 
 loadListByFetch();
 function loadListByFetch() {
-	fetch("https://raw.githubusercontent.com/Scrohild/yisibite/main/index.json")
+	fetch("https://raw.githubusercontent.com/Scrohild/yisibite/main/data.json")
 		.then(response => response.json())
 		.then(data => {
 			list = data.list;
@@ -109,9 +109,9 @@ function getTypeIndex(obj) {
 		case "block":return 3;
 		case "tunnel":return 4;
 		case "water":return 5;
-		case "sand": return 6;
-		case "quarry":return 7;
-		case "bedrock":return 8;
+		case "quarry":return 6;
+		case "bedrock":return 7;
+		case "sand":return 8;
 		case "others":return 9;
 	}
 }
@@ -189,16 +189,16 @@ function setIndexByType() {
 }
 function getTypeName(givenType) {
 	switch (givenType) {
-		case "3-way": return "三向轰炸机";
-		case "eater": return "世吞/地吞";
-		case "gap": return "挖沟机";
-		case "block": return "铺方块机";
-		case "tunnel": return "盾构机";
-		case "water": return "排水机";
-		case "quarry": return "采矿机";
-		case "sand": return "刷沙机";
-		case "bedrock": return "基岩机";
-		case "others": return "其他";
+		case "3-way":return "三向轰炸机";
+		case "eater":return "世吞/地吞";
+		case "gap":return "挖沟机";
+		case "block":return "铺方块机";
+		case "tunnel":return "盾构机";
+		case "water":return "排水机";
+		case "quarry":return "采矿机";
+		case "bedrock":return "基岩机";
+		case "sand":return "刷沙机&固化"
+		case "others":return "其他";
 	}
 }
 
