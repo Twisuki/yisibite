@@ -4,52 +4,84 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="index.css" />
-		<title>火弦月MC档案</title>
+		<script src="data.js"></script>
+		<script src="index.js"></script>
+		<title>弦月档案 - 火弦月投影下载站</title>
 	</head>
 	<body>
 		<div id="title">
-			<h1 id="title-1">火 弦 月 M C 档 案</h1>
-			<div id="title-2">本档案仓库非火弦月本人管理, 如有缺失错误, 请加入
-				<a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=5vQGDPQkXZuWkwfyfEsNIWcrIJfAg4OQ&amp;authKey=NxrqIwvtsrDn%2BEw6WTaWx9%2FgV4%2ByyU0B83sHdAZ864L8I3KeLKeedWpJX1svpdBW&amp;noverify=0&amp;group_code=957971371" title="群号: 957971371">
+			<div id="title-h1">
+				弦&nbsp;&nbsp;月&nbsp;&nbsp;档&nbsp;&nbsp;案
+			</div>
+			<div id="title-h2">
+				本档案仓库由火弦月好友
+				<a href="https://space.bilibili.com/317707977"><img class="title-logo" src="src/bilibili.png" /></a>
+				<a href="https://github.com/Twisuki"><img class="title-logo" src="src/github.png" /></a>
+				Twisuki 管理, 如有缺失错误, 请加入
+				<a href="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=5vQGDPQkXZuWkwfyfEsNIWcrIJfAg4OQ&authKey=NxrqIwvtsrDn%2BEw6WTaWx9%2FgV4%2ByyU0B83sHdAZ864L8I3KeLKeedWpJX1svpdBW&noverify=0&group_code=957971371">
 					火弦月粉丝群3
 				</a>
 				联系我们
 			</div>
-			<div id="title-2">如表格无法加载, 请
-				<a href="" onclick="location.reload()">更换加载方式</a> ;
-				如发生格式问题, 请
-				<a href="" onclick="delLocalStorage()">清除缓存</a>
-			</div>
 		</div>
+		
 		<div id="index">
-			<div id="index-in">
-				排列方式
-			</div>
-			<div id="index-0" class="index-btn-def" onclick="setIndexByTime()">
+			<span id="index-text">排列方式</span>
+			<div id="index-btn-time" class="index-btn" onclick="setIndex(0)">
 				按时间
 			</div>
-			<div id="index-1" class="index-btn-def" onclick="setIndexByType()">
+			<div id="index-btn-type" class="index-btn" onclick="setIndex(1)">
 				按类型
 			</div>
 		</div>
+		
 		<div id="main">
-			<div id="main-head">
-				<div id="main-index">序号</div>
-				<div id="main-time">发布时间</div>
-				<div id="main-type">机器类型</div>
-				<div id="main-name">机器名称</div>
-				<div id="main-bv">视频</div>
-				<div id="main-download">下载</div>
+			<div id="main-th">
+				<div id="main-index" class="main-th">序号</div>
+				<div id="main-time" class="main-th">发布时间</div>
+				<div id="main-type" class="main-th">机器类型</div>
+				<div id="main-name" class="main-th">机器名称</div>
+				<div id="main-video" class="main-th">视频</div>
+				<div id="main-download" class="main-th">下载</div>
 			</div>
-			<div id="main-in">
-				
+			<div id="main-table">
+				<div class="main-row">
+					<div class="main-index">1</div>
+					<div class="main-time">2024-11-18</div>
+					<div class="main-type">未知</div>
+					<div class="main-name">神秘机器</div>
+					<div class="main-video"><span onclick="playVideo(0)"><img src="src/bilibili.png" /> 播放视频</span></div>
+					<div class="main-download"><span onclick="getLitematica(0)">获取投影</span></div>
+				</div>
 			</div>
 		</div>
+		
 		<div id="bottom">
-			这都被你发现了...网站编写Twisuki<a href="https://space.bilibili.com/317707977">@bilibili</a>,觉得网站好来给咱视频投币, 发现问题别找咱/
-			<br />夹带点私货 <a href="https://www.bilibili.com/video/BV1294y1D7en">最小最省材的推土机</a> <a href="https://www.bilibili.com/video/BV1t44y1n7tg">最小单选层电梯</a>
+			<div id="bottom-b1">
+				<span>仓库链接:
+					<a href="https://github.com/Twisuki/yisibite">
+						<img src="src/github.png" /> Twisuki/yisibite
+					</a>
+				</span>
+				<span>开发者:
+					<a href="http://github.com/Twisuki">
+						<img src="src/github.png" /> Twisuki
+					</a>
+				</span>
+			</div>
+			<div id="bottom-b2">
+				<ul>
+					<span>特别鸣谢: </span>
+					<li>GreatFood404</li>
+					<li>Qubit</li>
+					<li>yuhan2680</li>
+				</ul>
+			</div>
 		</div>
-		<a href="" id="downloader" download></a>
-		<script src="index.js"></script>
+		
+		<a id="downloader"></a>
+		<script>
+			setIndex(0);
+		</script>
 	</body>
 </html>
