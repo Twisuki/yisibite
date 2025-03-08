@@ -5,7 +5,7 @@ body {
 /* title */
 #title {
 	width: 800px;
-	height: 200px;
+	height: 230px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #d4d4d820;
@@ -32,6 +32,17 @@ body {
 	line-height: 35px;
 	text-align: center;
 	margin-top: 30px;
+	float: left;
+}
+#title-h3 {
+	width: 700px;
+	height: 25px;
+	margin-left: 50px;
+	color: #eeeeee;
+	font-size: 25px;
+	line-height: 35px;
+	text-align: center;
+	margin-top: 50px;
 	float: left;
 }
 .title-logo {
