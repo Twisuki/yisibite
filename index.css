@@ -57,6 +57,11 @@ body {
 #title-h2 > a:hover, #title-h3 > a:hover {
 	text-decoration: #00aaff 3px underline;
 }
+.title-logo:hover {
+	width: 30px;
+	height: 30px;
+	vertical-align: -5px;
+}
 
 /* idnex */
 #index {
