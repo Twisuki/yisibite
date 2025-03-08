@@ -50,11 +50,11 @@ body {
 	height: 25px;
 	vertical-align: -3px;
 }
-#title-h2 > a {
+#title-h2 > a, #title-h3 > a {
 	color: #00aaff;
 	text-decoration: none;
 }
-#title-h2 > a:hover {
+#title-h2 > a:hover, #title-h3 > a:hover {
 	text-decoration: #00aaff 3px underline;
 }
 
