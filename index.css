@@ -205,6 +205,11 @@ body {
 	height: 25px;
 	vertical-align: -2px;
 }
+#bottom-b1 > span > a > img:hover {
+	width: 30px;
+	height: 30px;
+	vertical-align: -5px;
+}
 #bottom-b2 {
 	width: 800px;
 	height: 30px;
