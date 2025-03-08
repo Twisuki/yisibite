@@ -197,7 +197,7 @@ body {
 	color: #00aaff;
 	text-decoration: none;
 }
-#bottom-b1 > span > a:hover {
+#bottom-b1 > span > .bottom-b1-text:hover {
 	text-decoration: #00aaff 3px underline;
 }
 #bottom-b1 > span > a > img {
